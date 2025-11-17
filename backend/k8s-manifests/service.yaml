@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: buggy-app-backend
+  labels:
+    app.kubernetes.io/name: buggy-app-backend
+    app.kubernetes.io/component: backend
+  annotations:
+    hint: |
+      The backend service exposes the backend deployment on port 8000.
+      It should select pods with the appropriate labels to route traffic correctly.
+spec:
+  selector:
+    app.kubernetes.io/name: buggy-app-backend
+    app.kubernetes.io/component: backend
+    app: backend
+  ports:
+  - name: http
+    port: 80
+    targetPort: 8000

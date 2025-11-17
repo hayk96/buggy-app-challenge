@@ -1,0 +1,11 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: buggy-app-frontend
+  labels:
+    app.kubernetes.io/name: buggy-app-frontend
+    app.kubernetes.io/component: frontend
+  annotations:
+    hint: |
+      Ensure the ingress rule is correctly configured to direct traffic 
+      to the frontend service, including the host and path settings.

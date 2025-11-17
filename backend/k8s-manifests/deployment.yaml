@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: buggy-app-backend
+  labels:
+    app.kubernetes.io/name: buggy-app-backend
+    app.kubernetes.io/component: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: buggy-app-backend
+      app.kubernetes.io/component: backend
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: buggy-app-backend
+        app.kubernetes.io/component: backend
+    spec:
+      containers:
+      - name: "buggy-app-backend"
+        image: "ghcr.io/hayk96/buggy-app-challenge-backend:v0.1.0"
