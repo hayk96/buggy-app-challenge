@@ -24,12 +24,14 @@ You are tasked with deploying a frontend-backend application stack in Kubernetes
 ## Task Requirements
 Make sure you fulfill the following requirements:  
 **Backend**
+- [ ] Use `buggy-app-challenge` namespace 
 - [ ] Configure a readiness probe for path `/health` 
 - [ ] Configure a liveness probe for path `/ready`
 - [ ] Set requests and limits on the container resources
 - [ ] Configure autoscaling at 70% of CPU utilization
 
 **Frontend**
+- [ ] Use `buggy-app-challenge` namespace
 - [ ] Configure a readiness probe for path `/health`
 - [ ] Configure a liveness probe on the TCP socket
 - [ ] Set requests and limits on the container resources
