@@ -23,6 +23,9 @@ You are tasked with deploying a frontend-backend application stack in Kubernetes
 
 ## Task Requirements
 Make sure you fulfill the following requirements:  
+
+ⓘ _Use appropriately `buggy-app-backend` and `buggy-app-frontend` names for Kubernetes resources._
+
 **Backend**
 - [ ] Use `buggy-app-challenge` namespace 
 - [ ] Configure a readiness probe for path `/health` 
@@ -39,6 +42,14 @@ Make sure you fulfill the following requirements:
 - [ ] The frontend application must be accessible under `http://buggy-app.challenge:30088`
 
 **IMPORTANT: All resources must be defined in YAML manifests, to allow anyone to successfully set up and run the stack via kubectl apply -f ...**
+
+## Before You Submit
+Before submit this challenge, run the validation scrip located in [releases](https://github.com/hayk96/buggy-app-challenge/releases/) to make sure all requirements are met:
+
+
+```shell
+$ ./validate-challenge-0.1.0-linux-amd64 --kubeconfig /path/to/your/kubeconfig
+```
 
 ## License
 Distributed under the MIT License. See `LICENSE` for more information.
