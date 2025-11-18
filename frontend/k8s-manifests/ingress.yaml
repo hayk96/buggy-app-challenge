@@ -2,6 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: buggy-app-frontend
+  namespace: buggy-app-challenge
   labels:
     app.kubernetes.io/name: buggy-app-frontend
     app.kubernetes.io/component: frontend
