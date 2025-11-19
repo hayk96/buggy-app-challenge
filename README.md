@@ -17,7 +17,7 @@ You are tasked with deploying a frontend-backend application stack in Kubernetes
 
 #### Container registry read token:
 > name: `buggy-app-challenge`  
-> value: `xxxx-yyyy-zzzz`
+> value: `Z2hwX1RqN3BGbXVidXVrMUpCME1Eb20xc1VaZmRUV2theTE3dmlzbQo=` (base64 encoded)
 
 ---
 
