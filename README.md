@@ -24,7 +24,7 @@ You are tasked with deploying a frontend-backend application stack in Kubernetes
 ## Task Requirements
 Make sure you fulfill the following requirements:  
 
-ⓘ _Use appropriately `buggy-app-backend` and `buggy-app-frontend` names for Kubernetes resources._
+ⓘ _Use appropriately `buggy-app-backend` and `buggy-app-frontend` names for Kubernetes resources. For namespace use `buggy-app-challenge`._ 
 
 **Backend**
 - [ ] Use `buggy-app-challenge` namespace 
@@ -38,8 +38,7 @@ Make sure you fulfill the following requirements:
 - [ ] Configure a readiness probe for path `/health`
 - [ ] Configure a liveness probe on the TCP socket
 - [ ] Set requests and limits on the container resources
-- [ ] Expose the frontend application via ingress under 
-- [ ] The frontend application must be accessible under `http://buggy-app.challenge:30088`
+- [ ] The frontend application must be accessible via ingress under `http://buggy-app.challenge:30088`
 
 **IMPORTANT: All resources must be defined in YAML manifests, to allow anyone to successfully set up and run the stack via kubectl apply -f ...**
 
