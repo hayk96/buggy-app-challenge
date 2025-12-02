@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kubernetes Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⎈ Kubernetes Dashboard</h1>
+            <div class="status-bar">
+                <button id="refresh-btn" class="refresh-btn">🔄 Refresh</button>
+            </div>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="pods">📦 Pods</button>
+            <button class="tab-btn" data-tab="services">🌐 Services</button>
+            <button class="tab-btn" data-tab="events">📋 Events</button>
+        </nav>
+
+        <div class="content">
+            <!-- Pods Tab -->
+            <div id="pods-tab" class="tab-content active">
+                <div class="section-header">
+                    <h2>Pods</h2>
+                    <input type="text" id="pods-search" class="search-input" placeholder="🔍 Search pods...">
+                </div>
+                <div id="pods-loading" class="loading">Loading pods...</div>
+                <div id="pods-error" class="error hidden"></div>
+                <div class="table-wrapper">
+                    <table id="pods-table" class="data-table hidden">
+                        <thead>
+                            <tr>
+                                <th>Namespace</th>
+                                <th>Name</th>
+                                <th>Pod IP</th>
+                            </tr>
+                        </thead>
+                        <tbody id="pods-tbody"></tbody>
+                    </table>
+                </div>
+                <div id="pods-count" class="count-info"></div>
+            </div>
+
+            <!-- Services Tab -->
+            <div id="services-tab" class="tab-content">
+                <div class="section-header">
+                    <h2>Services</h2>
+                    <input type="text" id="services-search" class="search-input" placeholder="🔍 Search services...">
+                </div>
+                <div id="services-loading" class="loading">Loading services...</div>
+                <div id="services-error" class="error hidden"></div>
+                <div class="table-wrapper">
+                    <table id="services-table" class="data-table hidden">
+                        <thead>
+                            <tr>
+                                <th>Namespace</th>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Cluster IP</th>
+                                <th>Ports</th>
+                                <th>Selector</th>
+                            </tr>
+                        </thead>
+                        <tbody id="services-tbody"></tbody>
+                    </table>
+                </div>
+                <div id="services-count" class="count-info"></div>
+            </div>
+
+            <!-- Events Tab -->
+            <div id="events-tab" class="tab-content">
+                <div class="section-header">
+                    <h2>Events</h2>
+                    <input type="text" id="events-search" class="search-input" placeholder="🔍 Search events...">
+                </div>
+                <div id="events-loading" class="loading">Loading events...</div>
+                <div id="events-error" class="error hidden"></div>
+                <div class="table-wrapper">
+                    <table id="events-table" class="data-table hidden">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Namespace</th>
+                                <th>Reason</th>
+                                <th>Message</th>
+                                <th>Object</th>
+                                <th>Last Seen</th>
+                            </tr>
+                        </thead>
+                        <tbody id="events-tbody"></tbody>
+                    </table>
+                </div>
+                <div id="events-count" class="count-info"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
+
